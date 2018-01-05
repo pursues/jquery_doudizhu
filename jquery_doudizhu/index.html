@@ -1,0 +1,198 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>斗地主</title>
+
+	<!-- 样式文件 -->
+	<link rel="stylesheet" type="text/css" href="./css/index.css">
+
+	<!-- 脚本文件 -->
+	<script type="text/javascript" src="./js/jquery-3.2.1.min.js"></script>
+	<script type="text/javascript" src="./js/index.js"></script>
+	<script type="text/javascript" src="./js/auto.js"></script>
+	<script type="text/javascript" src="./js/rules.js"></script>
+	<!-- <script type="text/javascript" src="./js/rule.js"></script> -->
+	<script type="text/javascript" src="./js/vs.js"></script>
+	<script type="text/javascript" src="./js/start.js"></script>
+
+</head>
+
+<!-- ==============主体内容================ -->
+<body>
+	<div class="content">
+		<!-- <div class="msg">点击牌开始洗牌，发牌；右上角有设置功能</div> -->
+	<!-- ======开门动画及音乐======== -->
+		<div class="damen">
+			<div id="img"></div>
+			<div id="loads">
+				<div id="leng"></div>
+			</div>
+			<div id="anniu" onclick="damen()"></div>
+			<audio id="Firstvideo" src="./tu/ruchang.mp3"></audio>
+			<audio id="Bgvideo" class="Bgvideo" src="" loop="loop"></audio>
+		</div>
+
+ 		<!-- 音乐 -->
+		
+ 		<audio class="voice" id="voice" src=""></audio>
+		<audio class="sound" id="sound" src=""></audio>
+		<!-- ===左边玩家=== -->
+		<div class="left">
+			<ul class="play_1">
+			</ul>
+			<h1></h1>
+			<span></span>  <!-- 头像 -->
+			<div class="qdz">
+				<h1 class="h1" type="button" data-value='1' index="1"></h1>
+				<h1 class="h3" type="button" data-value="1" index="2"></h1>
+				<h1 class="h4" type="button" data-value="1" index="3"></h1>
+				<h1 class="h2" type="button"  data-value='0' index="0"></h1>
+			</div>
+			<div class="h5">
+				<b class="play" index="1"></b>
+				<b class="pass"></b>
+			</div>
+			<!-- 出牌和过牌 -->
+			<div class="time"><i></i></div>
+		</div>
+
+		<!-- =====中间部分===== -->
+		<div class="mid">
+			<div class="mid_top">
+				<ul class="all_poker">
+
+				</ul>
+				<div class="tips">
+					<h1></h1>
+				</div>
+				<ul class="now_poker"></ul>
+				<div class="zhadan"></div>
+				<div class="feiji"></div>
+				<div class="liandui"></div>
+				<div class="shunzi"></div>
+				<div class="huojian"></div>
+				<!-- <div class="alert">
+					<b></b>
+					<h2>点击发牌</h2>
+				</div> -->
+			</div>
+			<!-- ===中间玩家=== -->
+			<div class="mid_end">
+				<ul class="play_2">
+				</ul>
+				<span></span>
+				<div class="qdz">
+					<h1 class="h1" type="button" data-value='2' index="1"></h1>
+					<h1 class="h3" type="button" data-value="2" index="2"></h1>
+					<h1 class="h4" type="button" data-value="2" index="3"></h1>
+					<h1 class="h2" type="button"  data-value='0' index="0"></h1>
+				</div>
+				<div class="h5">
+					<b class="play" index="2"></b>
+					<b class="pass"></b>
+				</div>
+				<!-- 出牌和过牌 -->
+				<div class="time"><i></i></div>
+			</div>
+		</div>
+
+		<!-- ===右边玩家=== -->
+		<div class="right">
+			<ul class="play_3">
+			</ul>
+			<span></span>
+			<div class="qdz">
+				<h1 class="h1" type="button" data-value='3' index="1"></h1>
+				<h1 class="h3" type="button" data-value="3" index="2"></h1>
+				<h1 class="h4" type="button" data-value="3" index="3"></h1>
+				<h1 class="h2" type="button"  data-value='0' index="0"></h1>
+			</div>
+			<div class="h5">
+				<b class="play" index="3"></b>
+				<b class="pass"></b>
+			</div>
+			<!-- 出牌和过牌 -->
+			<div class="time"><i></i></div>
+		</div>
+		<!-- 设置按钮 -->
+		<em class="ems">
+			<img src="./tu/set.png">
+		</em>
+		<div class="alert1">
+			<!-- <b></b> -->
+			<!-- <h2>点击设置</h2> -->
+		</div>
+		<!-- 设置界面 -->
+		<div class="setup">
+			<div class="setup_content">
+				<div class="setup_content_left">
+					<div class="top">
+						<div class="music">
+							<div class="music_content">
+								<ul class="music1">
+									<li>
+										<div class="m_select" style="background: #32c532;" data-select="1">
+										</div>
+										<span>music1</span>
+										<div class="clear"></div>
+									</li>
+								</ul>
+								<ul class="music2">
+									<li>
+										<div class="m_select" data-select="2">
+										</div>
+										<span>music2</span>
+									</li>
+								</ul>
+								<ul class="music3">
+									<li>
+										<div class="m_select" data-select="3">
+										</div>
+										<span>music3</span>
+									</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+					<div class="bottom">
+						<div class="off">
+							<ul class="bgm">
+								<li>
+									<div class="on"></div>
+								</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+				<div class="setup_content_right">
+					<div class="background">
+						<ul class="bg_list">
+							<li><img src="./tu/back1.png" class="bg_list_select" data-select="1"></li>
+							<li><img src="./tu/back2.png" data-select="2"></li>
+							<div class="clear"></div>
+							<li><img src="./tu/back3.png" data-select="3"></li>
+							<div class="clear"></div>
+						</ul>
+					</div>
+				</div>
+				<b class="sure"></b>
+				<div class="cancel"></div>
+			</div>
+			<div class="win"></div>
+		</div>
+		<div class="restart">
+			<h1></h1>
+			<div class="OK">确定</div>
+		</div>
+		<div class="win">
+			<h1 class="winner"></h1>
+			<h1></h1>
+			<h1></h1>
+			<h1></h1>
+			<div class="OK">开始下一把</div>
+		</div>
+	</div>
+
+</body>
+</html>
